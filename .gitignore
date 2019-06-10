@@ -24,3 +24,5 @@ hs_err_pid*
 
 # Files with sensitive info
 application.properties
+db/*
+!db/create.sql

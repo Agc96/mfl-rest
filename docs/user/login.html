@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My First Login</title>
+        <link rel="stylesheet" href="../styles.css">
+    </head>
+    <body>
+        <h1>My First Login</h1>
+        <h3>Inicio de sesión</h3>
+        <div class="table-responsive">
+            <table class="service-summary">
+                <tbody>
+                    <tr>
+                        <th scope="col">URL</th>
+                        <td>https://&lt;host&gt;:&lt;port&gt;/my-first-login-rest/user/login</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">Método</th>
+                        <td>POST</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="table-responsive">
+            <table class="service-description">
+                <thead>
+                    <tr>
+                        <th scope="col">Argumentos de entrada</th>
+                        <th scope="col">Tipo de dato</th>
+                        <th scope="col">¿Requerido?</th>
+                        <th scope="col">Valores válidos</th>
+                        <th scope="col">Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="json">{</td>
+                        <td class="center"></td>
+                        <td class="center"></td>
+                        <td class="center"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="json">    "applicationName": &lt;valor&gt;,</td>
+                        <td class="center">cadena</td>
+                        <td class="center"><strong>X</strong></td>
+                        <td class="center"><strong>MY_FIRST_LOGIN</strong></td>
+                        <td>Nombre de la aplicación.</td>
+                    </tr>
+                    <tr>
+                        <td class="json">    "username": &lt;valor&gt;,</td>
+                        <td class="center">cadena</td>
+                        <td class="center"><strong>X</strong></td>
+                        <td class="center">longitud > 0</td>
+                        <td>Nombre de usuario.</td>
+                    </tr>
+                    <tr>
+                        <td class="json">    "password": &lt;valor&gt;</td>
+                        <td class="center">cadena</td>
+                        <td class="center"><strong>X</strong></td>
+                        <td class="center">longitud > 0</td>
+                        <td>Contraseña del usuario.</td>
+                    </tr>
+                    <tr>
+                        <td class="json">}</td>
+                        <td class="center"></td>
+                        <td class="center"></td>
+                        <td class="center"></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="table-responsive">
+            <table class="service-description">
+                <thead>
+                    <tr>
+                        <th scope="col">Argumentos de salida</th>
+                        <th scope="col">Tipo de dato</th>
+                        <th scope="col">Valores válidos</th>
+                        <th scope="col">Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="json">{</td>
+                        <td class="center"></td>
+                        <td class="center"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="json">    "errorCode": &lt;valor&gt;,</td>
+                        <td class="center">entero</td>
+                        <td class="center">0 si no hay error<br>&ne;0 si hubo un error</td>
+                        <td>Código de error enviado por el servicio REST.</td>
+                    </tr>
+                    <tr>
+                        <td class="json">    "message": &lt;valor&gt;,</td>
+                        <td class="center">cadena</td>
+                        <td class="center"></td>
+                        <td>Mensaje de error, si es que hubo algún error.</td>
+                    </tr>
+                    <tr>
+                        <td class="json">    "userId": &lt;valor&gt;,</td>
+                        <td class="center">entero</td>
+                        <td class="center">> 0</td>
+                        <td>ID del usuario.</td>
+                    </tr>
+                    <tr>
+                        <td class="json">    "fullName": &lt;valor&gt;,</td>
+                        <td class="center">cadena</td>
+                        <td class="center"></td>
+                        <td>Nombre completo del usuario.</td>
+                    </tr>
+                    <tr>
+                        <td class="json">    "email": &lt;valor&gt;</td>
+                        <td class="center">cadena</td>
+                        <td class="center">nombre.alumno@pucp.pe</td>
+                        <td>Correo electrónico del usuario.</td>
+                    </tr>
+                    <tr>
+                        <td class="json">}</td>
+                        <td class="center"></td>
+                        <td class="center"></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="center"><a href="../index.html">Volver</a></div>
+    </body>
+</html>
