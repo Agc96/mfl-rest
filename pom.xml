@@ -18,13 +18,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <!-- version>2.1.5.RELEASE</version -->
         </dependency>
         <!-- JPA Data (repositories, entities, etc.) -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
-            <!-- version>2.1.5.RELEASE</version -->
         </dependency>
         <!-- PostgreSQL JDBC driver -->
         <dependency>
