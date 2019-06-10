@@ -1,4 +1,4 @@
-package pe.edu.pucp.a20190000.myfirstloginrest.db.entities;
+package pe.edu.pucp.a20130095.myfirstloginrest.model.db;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,29 +8,21 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "MFL_USER")
+@Table(name = "mfl_user")
 public class User {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    @Column(name = "USER_ID")
+    @Column(name = "user_id")
     private Integer userId;
-
-    @Column(name = "FULL_NAME")
-    private String fullName;
-
-    @Column(name = "EMAIL")
+    private String fullname;
     private String email;
-
-    @Column(name = "USERNAME")
     private String username;
-
-    @Column(name = "HASH")
     private String hash;
 
-    public User(int userId, String fullName, String email, String username, String hash) {
+    public User(int userId, String fullname, String email, String username, String hash) {
         this.userId = userId;
-        this.fullName = fullName;
+        this.fullname = fullname;
         this.email = email;
         this.username = username;
         this.hash = hash;
@@ -39,19 +31,15 @@ public class User {
     public int getUserId() {
         return userId;
     }
-
     public String getFullName() {
-        return fullName;
+        return fullname;
     }
-
     public String getEmail() {
         return email;
     }
-
     public String getUsername() {
         return username;
     }
-
     public String getHash() {
         return hash;
     }

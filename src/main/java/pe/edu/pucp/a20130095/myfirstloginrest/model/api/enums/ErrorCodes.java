@@ -1,4 +1,4 @@
-package pe.edu.pucp.a20130095.myfirstloginrest.ro.enums;
+package pe.edu.pucp.a20130095.myfirstloginrest.model.api.enums;
 
 public enum ErrorCodes {
     NO_ERROR(0, null),

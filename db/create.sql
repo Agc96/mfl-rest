@@ -1,9 +1,9 @@
 CREATE DATABASE myfirstlogin;
 
 GRANT ALL ON DATABASE myfirstlogin TO postgres;
-GRANT CONNECT ON DATABASE tracking TO webapp;
+GRANT CONNECT ON DATABASE myfirstlogin TO webapp;
 
-CREATE TABLE user (
+CREATE TABLE mfl_user (
     user_id SERIAL NOT NULL PRIMARY KEY,
     username VARCHAR(64) NOT NULL,
     hash VARCHAR(128) NOT NULL,

@@ -1,10 +1,10 @@
-package pe.edu.pucp.a20130095.myfirstloginrest.ro.out;
+package pe.edu.pucp.a20130095.myfirstloginrest.model.api.out;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
 
-import pe.edu.pucp.a20130095.myfirstloginrest.ro.base.BaseOutRO;
+import pe.edu.pucp.a20130095.myfirstloginrest.model.api.base.BaseOutRO;
 
 @JsonRootName("userOutRO")
 public class UserOutRO extends BaseOutRO {
