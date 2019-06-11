@@ -5,7 +5,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import pe.edu.pucp.a20130095.myfirstloginrest.db.controller.ApplicationRepository;
 import pe.edu.pucp.a20130095.myfirstloginrest.db.controller.UserRepository;
+import pe.edu.pucp.a20130095.myfirstloginrest.db.model.Application;
 import pe.edu.pucp.a20130095.myfirstloginrest.db.model.User;
 import pe.edu.pucp.a20130095.myfirstloginrest.api.model.base.ErrorTypes;
 import pe.edu.pucp.a20130095.myfirstloginrest.api.model.in.LoginInRO;
@@ -16,6 +18,8 @@ import pe.edu.pucp.a20130095.myfirstloginrest.utils.Utilities;
 @RestController
 public class UserController {
 
+    @Autowired
+    private ApplicationRepository appRepository;
     @Autowired
     private UserRepository userRepository;
 
@@ -32,7 +36,7 @@ public class UserController {
             return new UserOutRO(ErrorTypes.INVALID_DATA, "El nombre de usuario ingresado no es válido.");
         }
         String password = request.getPassword();
-        if (Crypto.verifyPassword(password, user.getHash())) {
+        if (!Crypto.verifyPassword(password, user.getHash())) {
             return new UserOutRO(ErrorTypes.INVALID_DATA, "La contraseña ingresada no es válida.");
         }
 
@@ -49,7 +53,8 @@ public class UserController {
         if (Utilities.isEmptyString(applicationName)) {
             return new UserOutRO(ErrorTypes.MISSING_APP_NAME);
         }
-        if (!Utilities.checkApplicationName(applicationName)) {
+        Application app = appRepository.findFirstByName(applicationName);
+        if (app == null) {
             return new UserOutRO(ErrorTypes.INVALID_APP_NAME);
         }
 

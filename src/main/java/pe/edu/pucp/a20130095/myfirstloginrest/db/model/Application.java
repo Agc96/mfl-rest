@@ -8,7 +8,7 @@ import javax.persistence.Table;
 @Table(name = "mfl_application")
 public class Application {
     @Id
-    private int id;
+    private Integer id;
     private String name;
 
     public Application() {
@@ -18,6 +18,13 @@ public class Application {
     public Application(int id, String name) {
         this.id = id;
         this.name = name;
+    }
+
+    public Integer getId() {
+        return this.id;
+    }
+    public String getName() {
+        return this.name;
     }
 
     @Override

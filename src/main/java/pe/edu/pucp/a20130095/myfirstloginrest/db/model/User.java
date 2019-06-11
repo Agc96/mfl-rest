@@ -26,7 +26,7 @@ public class User {
         this.hash = hash;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
     public String getFullName() {

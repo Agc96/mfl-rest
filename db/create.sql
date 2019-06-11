@@ -7,6 +7,8 @@ CREATE DATABASE myfirstlogin;
 GRANT ALL ON DATABASE myfirstlogin TO postgres;
 GRANT CONNECT ON DATABASE myfirstlogin TO webapp;
 
+-- NOTA: Conectarse a la base de datos myfirstlogin (\c myfirstlogin)
+
 -- Crear tablas
 CREATE TABLE mfl_user (
     id SERIAL NOT NULL PRIMARY KEY,
