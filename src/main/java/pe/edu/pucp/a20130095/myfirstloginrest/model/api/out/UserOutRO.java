@@ -5,6 +5,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
 
 import pe.edu.pucp.a20130095.myfirstloginrest.model.api.base.BaseOutRO;
+import pe.edu.pucp.a20130095.myfirstloginrest.model.api.base.ErrorTypes;
+import pe.edu.pucp.a20130095.myfirstloginrest.model.db.User;
 
 @JsonRootName("userOutRO")
 public class UserOutRO extends BaseOutRO {
@@ -23,6 +25,27 @@ public class UserOutRO extends BaseOutRO {
         this.userId = userId;
         this.fullName = fullName;
         this.email = email;
+    }
+
+    public UserOutRO(ErrorTypes error) {
+        super(error);
+        this.userId = 0;
+        this.fullName = null;
+        this.email = null;
+    }
+
+    public UserOutRO(ErrorTypes error, String customMessage) {
+        super(error, customMessage);
+        this.userId = 0;
+        this.fullName = null;
+        this.email = null;
+    }
+
+    public UserOutRO(ErrorTypes error, User user) {
+        super(error);
+        this.userId = user.getUserId();
+        this.fullName = user.getFullName();
+        this.email = user.getEmail();
     }
 
     public int getUserId() {

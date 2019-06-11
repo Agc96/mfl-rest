@@ -17,6 +17,16 @@ public class BaseOutRO {
         this.message = message;
     }
 
+    public BaseOutRO(ErrorTypes error) {
+        this.errorCode = error.getCode();
+        this.message = error.getMessage();
+    }
+
+    public BaseOutRO(ErrorTypes error, String customMessage) {
+        this.errorCode = error.getCode();
+        this.message = error.getMessage() + " " + customMessage;
+    }
+
     public int getErrorCode() {
         return errorCode;
     }

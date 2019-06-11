@@ -1,6 +1,6 @@
-package pe.edu.pucp.a20130095.myfirstloginrest.model.api.enums;
+package pe.edu.pucp.a20130095.myfirstloginrest.model.api.base;
 
-public enum ErrorCodes {
+public enum ErrorTypes {
     NO_ERROR(0, null),
     ERROR_UNKNOWN(9000, "Error inesperado en el servicio REST."),
     NO_RESULTS(9001, "No se encontraron resultados."),
@@ -12,7 +12,7 @@ public enum ErrorCodes {
     int code;
     String message;
 
-    ErrorCodes (int code, String message) {
+    ErrorTypes(int code, String message) {
         this.code = code;
         this.message = message;
     }
