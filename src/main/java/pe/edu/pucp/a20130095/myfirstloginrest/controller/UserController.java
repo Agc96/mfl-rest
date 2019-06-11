@@ -11,7 +11,7 @@ import pe.edu.pucp.a20130095.myfirstloginrest.utils.Utilities;
 
 @RestController
 public class UserController {
-    
+
     @PostMapping("/user/login")
     public UserOutRO login(@RequestBody LoginInRO request) {
         // Ver si hay errores en el JSON de entrada
@@ -20,7 +20,8 @@ public class UserController {
         // Obtener el usuario con el nombre de usuario especificado
         String username = request.getUsername();
         String password = request.getPassword();
-        return new UserOutRO(0, null, 1, "agc", "a@a.com");
+        // return new UserOutRO(0, "", 1, "Anthony Gutiérrez", "anthony.gutierrez@pucp.pe");
+        return new UserOutRO(0, null, 2, "Eder Quispe", "eder.quispe@pucp.edu.pe");
     }
 
     private UserOutRO validateLoginData(LoginInRO request) {
