@@ -1,4 +1,4 @@
-package pe.edu.pucp.a20130095.myfirstloginrest.model.api.base;
+package pe.edu.pucp.a20130095.myfirstloginrest.api.model.base;
 
 public enum ErrorTypes {
     NO_ERROR(0, null),

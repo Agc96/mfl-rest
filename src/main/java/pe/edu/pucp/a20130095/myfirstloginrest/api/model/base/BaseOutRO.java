@@ -1,4 +1,4 @@
-package pe.edu.pucp.a20130095.myfirstloginrest.model.api.base;
+package pe.edu.pucp.a20130095.myfirstloginrest.api.model.base;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;

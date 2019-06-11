@@ -1,10 +1,10 @@
-package pe.edu.pucp.a20130095.myfirstloginrest.model.api.in;
+package pe.edu.pucp.a20130095.myfirstloginrest.api.model.in;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
 
-import pe.edu.pucp.a20130095.myfirstloginrest.model.api.base.BaseInRO;
+import pe.edu.pucp.a20130095.myfirstloginrest.api.model.base.BaseInRO;
 
 @JsonRootName("loginInRO")
 public class LoginInRO extends BaseInRO {

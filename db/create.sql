@@ -9,11 +9,15 @@ GRANT CONNECT ON DATABASE myfirstlogin TO webapp;
 
 -- Crear tablas
 CREATE TABLE mfl_user (
-    user_id SERIAL NOT NULL PRIMARY KEY,
+    id SERIAL NOT NULL PRIMARY KEY,
     username VARCHAR(64) NOT NULL,
     hash VARCHAR(128) NOT NULL,
     fullname VARCHAR(128) NOT NULL,
     email VARCHAR(128) NOT NULL
+);
+CREATE TABLE mfl_application(
+    id SERIAL NOT NULL PRIMARY KEY,
+    name VARCHAR(64) NOT NULL
 );
 
 -- Otorgar permisos a la aplicación REST

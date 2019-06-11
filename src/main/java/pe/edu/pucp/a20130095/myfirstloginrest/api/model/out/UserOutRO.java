@@ -1,12 +1,12 @@
-package pe.edu.pucp.a20130095.myfirstloginrest.model.api.out;
+package pe.edu.pucp.a20130095.myfirstloginrest.api.model.out;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
 
-import pe.edu.pucp.a20130095.myfirstloginrest.model.api.base.BaseOutRO;
-import pe.edu.pucp.a20130095.myfirstloginrest.model.api.base.ErrorTypes;
-import pe.edu.pucp.a20130095.myfirstloginrest.model.db.User;
+import pe.edu.pucp.a20130095.myfirstloginrest.api.model.base.BaseOutRO;
+import pe.edu.pucp.a20130095.myfirstloginrest.api.model.base.ErrorTypes;
+import pe.edu.pucp.a20130095.myfirstloginrest.db.model.User;
 
 @JsonRootName("userOutRO")
 public class UserOutRO extends BaseOutRO {
@@ -43,7 +43,7 @@ public class UserOutRO extends BaseOutRO {
 
     public UserOutRO(ErrorTypes error, User user) {
         super(error);
-        this.userId = user.getUserId();
+        this.userId = user.getId();
         this.fullName = user.getFullName();
         this.email = user.getEmail();
     }

@@ -1,35 +1,33 @@
-package pe.edu.pucp.a20130095.myfirstloginrest.model.db;
+package pe.edu.pucp.a20130095.myfirstloginrest.db.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "mfl_user")
 public class User {
-
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    @Column(name = "user_id")
-    private Integer userId;
+    private Integer id;
     private String fullname;
     private String email;
     private String username;
     private String hash;
 
-    public User(int userId, String fullname, String email, String username, String hash) {
-        this.userId = userId;
+    protected User () {
+        // Constructor vacío requerido por JPA
+    }
+
+    public User(int id, String fullname, String email, String username, String hash) {
+        this.id = id;
         this.fullname = fullname;
         this.email = email;
         this.username = username;
         this.hash = hash;
     }
 
-    public int getUserId() {
-        return userId;
+    public int getId() {
+        return id;
     }
     public String getFullName() {
         return fullname;
@@ -42,5 +40,10 @@ public class User {
     }
     public String getHash() {
         return hash;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("User[id=%d, username=%s]", id, username);
     }
 }
