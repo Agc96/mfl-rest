@@ -18,6 +18,10 @@ import pe.edu.pucp.a20130095.myfirstloginrest.utils.Utilities;
 @RestController
 public class UserController {
 
+    private final static String MISSING_USERNAME  = "Ingrese el nombre de usuario.";
+    private final static String MISSING_PASSWORD  = "Ingrese la contraseña.";
+    private final static String INVALID_USER_DATA = "El nombre de usuario o la contraseña no son válidos.";
+
     @Autowired
     private ApplicationRepository appRepository;
     @Autowired
@@ -33,11 +37,11 @@ public class UserController {
         String username = request.getUsername();
         User user = userRepository.findFirstByUsername(username);
         if (user == null) {
-            return new UserOutRO(ErrorTypes.INVALID_DATA, "El nombre de usuario ingresado no es válido.");
+            return new UserOutRO(ErrorTypes.INVALID_DATA, INVALID_USER_DATA);
         }
         String password = request.getPassword();
-        if (!Crypto.verifyPassword(password, user.getHash())) {
-            return new UserOutRO(ErrorTypes.INVALID_DATA, "La contraseña ingresada no es válida.");
+        if (!Crypto.verify(user.getHash(), password)) {
+            return new UserOutRO(ErrorTypes.INVALID_DATA, INVALID_USER_DATA);
         }
 
         // Devolver la respuesta con los datos del usuario
@@ -61,11 +65,11 @@ public class UserController {
         // Validar usuario y contraseña
         String username = request.getUsername();
         if (Utilities.isEmptyString(username)) {
-            return new UserOutRO(ErrorTypes.MISSING_DATA, "Ingrese el nombre de usuario.");
+            return new UserOutRO(ErrorTypes.MISSING_DATA, MISSING_USERNAME);
         }
         String password = request.getPassword();
         if (Utilities.isEmptyString(password)) {
-            return new UserOutRO(ErrorTypes.MISSING_DATA, "Ingrese la contraseña.");
+            return new UserOutRO(ErrorTypes.MISSING_DATA, MISSING_PASSWORD);
         }
 
         // Si ha pasado todas las pruebas, continuar con la ejecución

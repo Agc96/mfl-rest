@@ -4,11 +4,11 @@ import de.rtner.security.auth.spi.SimplePBKDF2;
 
 public class Crypto {
 
-	public static String createHash(String password) {
+	public static String create(String password) {
 		return new SimplePBKDF2().deriveKeyFormatted(password);
 	}
 
-	public static boolean verifyPassword(String inputPassword, String userHash) {
+	public static boolean verify(String userHash, String inputPassword) {
 		return new SimplePBKDF2().verifyKeyFormatted(userHash, inputPassword);
 	}
 }
