@@ -29,16 +29,12 @@ public class UserOutRO extends BaseOutRO {
 
     public UserOutRO(ErrorTypes error) {
         super(error);
-        this.userId = 0;
-        this.fullName = null;
-        this.email = null;
+        // Los otros valores se inicializan por defecto en 0 o null.
     }
 
     public UserOutRO(ErrorTypes error, String customMessage) {
         super(error, customMessage);
-        this.userId = 0;
-        this.fullName = null;
-        this.email = null;
+        // Los otros valores se inicializan por defecto en 0 o null.
     }
 
     public UserOutRO(ErrorTypes error, User user) {

@@ -1,6 +1,7 @@
 package pe.edu.pucp.a20130095.myfirstloginrest.db.model;
 
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -24,16 +25,21 @@ public class User {
     @Column(name = "HASH")
     private String hash;
 
+    @Embedded
+    private AuditData auditData;
+
     protected User () {
-        // Constructor vacío requerido por JPA
+        // Constructor vacío requerido por JPA.
+        // Los valores se inicializan por defecto en 0 o null.
     }
 
-    public User(int id, String fullname, String email, String username, String hash) {
+    public User(int id, String fullname, String email, String username, String hash, AuditData auditData) {
         this.id = id;
         this.fullname = fullname;
         this.email = email;
         this.username = username;
         this.hash = hash;
+        this.auditData = auditData;
     }
 
     public Integer getId() {
@@ -50,6 +56,9 @@ public class User {
     }
     public String getHash() {
         return hash;
+    }
+    public AuditData getAuditData() {
+        return this.auditData;
     }
 
     @Override
