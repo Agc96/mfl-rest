@@ -1,5 +1,6 @@
 package pe.edu.pucp.a20130095.myfirstloginrest.db.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
