@@ -25,7 +25,8 @@ public class User {
     private String hash;
 
     protected User () {
-        // Constructor vacío requerido por JPA
+        // Constructor vacío requerido por JPA.
+        // Los atributos se inicializan por defecto en 0 o null.
     }
 
     public User(int id, String fullname, String email, String username, String hash) {

@@ -16,7 +16,8 @@ public class Application {
     private String name;
 
     public Application() {
-        // Constructor vacío requerido por JPA
+        // Constructor vacío requerido por JPA.
+        // Los atributos se inicializan por defecto en 0 o null.
     }
 
     public Application(int id, String name) {
