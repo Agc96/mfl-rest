@@ -5,13 +5,22 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "mfl_user")
+@Table(name = "MFL_USUARIO")
 public class User {
     @Id
+    @Column(name = "ID_USUARIO")
     private Integer id;
+
+    @Column(name = "NOMBRE_COMPLETO")
     private String fullname;
+
+    @Column(name = "CORREO")
     private String email;
+
+    @Column(name = "NOMBRE_USUARIO")
     private String username;
+
+    @Column(name = "HASH")
     private String hash;
 
     protected User () {

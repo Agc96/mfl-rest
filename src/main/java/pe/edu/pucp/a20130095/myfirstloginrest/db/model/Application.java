@@ -5,10 +5,13 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "mfl_application")
+@Table(name = "MFL_APLICACION")
 public class Application {
     @Id
+    @Column(name = "ID_APLICACION")
     private Integer id;
+
+    @Column(name = "NOMBRE")
     private String name;
 
     public Application() {
